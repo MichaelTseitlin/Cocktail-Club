@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2qf-bD-W0j">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Coctail Club-->
+        <scene sceneID="dai-Fl-Gew">
+            <objects>
+                <collectionViewController id="P0R-jZ-CBl" customClass="CollectionViewController" customModule="Cocktail_Club" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="T4R-o6-Bhd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="0.0" id="kj9-6t-bYH">
+                            <size key="itemSize" width="150" height="200"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="35" minY="30" maxX="40" maxY="40"/>
+                        </collectionViewFlowLayout>
+                        <imageView key="backgroundView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="party" id="MDM-x5-saV">
+                            <rect key="frame" x="0.0" y="-140" width="414" height="896"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="NVp-K6-XKQ" customClass="CollectionViewCell" customModule="Cocktail_Club" customModuleProvider="target">
+                                <rect key="frame" x="35" y="30" width="150" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RVC-pP-uHz">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="173.66666666666666"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZZ-IK-RhS">
+                                            <rect key="frame" x="0.0" y="172.66666666666666" width="150" height="27.333333333333343"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="RVC-pP-uHz" firstAttribute="top" secondItem="NVp-K6-XKQ" secondAttribute="top" id="5Ze-CN-hV3"/>
+                                    <constraint firstItem="YZZ-IK-RhS" firstAttribute="top" secondItem="RVC-pP-uHz" secondAttribute="bottom" constant="-1" id="C5m-9Q-y1B"/>
+                                    <constraint firstAttribute="trailing" secondItem="RVC-pP-uHz" secondAttribute="trailing" id="IDt-RZ-n8b"/>
+                                    <constraint firstItem="YZZ-IK-RhS" firstAttribute="leading" secondItem="NVp-K6-XKQ" secondAttribute="leading" id="Wri-82-7PA"/>
+                                    <constraint firstAttribute="trailing" secondItem="YZZ-IK-RhS" secondAttribute="trailing" id="XMr-zh-ewg"/>
+                                    <constraint firstItem="RVC-pP-uHz" firstAttribute="leading" secondItem="NVp-K6-XKQ" secondAttribute="leading" id="eQz-TK-KeL"/>
+                                    <constraint firstAttribute="bottom" secondItem="YZZ-IK-RhS" secondAttribute="bottom" id="uRd-Ie-7ed"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="RVC-pP-uHz" id="eOD-Nu-9ta"/>
+                                    <outlet property="nameLabel" destination="YZZ-IK-RhS" id="exG-pG-V27"/>
+                                    <segue destination="J5X-Fi-c87" kind="show" id="Ryp-Np-2GM"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="P0R-jZ-CBl" id="rAd-hz-4OI"/>
+                            <outlet property="delegate" destination="P0R-jZ-CBl" id="7QA-7S-a3w"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Coctail Club" largeTitleDisplayMode="always" id="lMb-CW-1sV"/>
+                    <connections>
+                        <outlet property="backgroundImage" destination="MDM-x5-saV" id="fMr-Bo-iXX"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0KR-QD-t2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1810.144927536232" y="103.79464285714285"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="UNa-0b-RB0">
+            <objects>
+                <viewController id="J5X-Fi-c87" customClass="DetailViewController" customModule="Cocktail_Club" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IuC-cS-m2X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="party" translatesAutoresizingMaskIntoConstraints="NO" id="Gcx-lC-Riu">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8E-Wq-pkC">
+                                <rect key="frame" x="20" y="160" width="374" height="682"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UEQ-cx-cyk">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="876.66666666666663"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jjR-o3-CVq">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="448"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hw5-Gm-v6M">
+                                                <rect key="frame" x="0.0" y="458" width="374" height="32"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alcoholic" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BV-ji-yQw">
+                                                <rect key="frame" x="0.0" y="500" width="374" height="32"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Glass" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cst-O7-lik">
+                                                <rect key="frame" x="0.0" y="542" width="374" height="32"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instruction" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7oB-Xp-Qln">
+                                                <rect key="frame" x="0.0" y="584" width="374" height="32"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aLz-Ba-t4N">
+                                                <rect key="frame" x="0.0" y="626" width="374" height="250.66666666666663"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtx-2K-gDS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="32"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOS-cs-05C">
+                                                                <rect key="frame" x="0.0" y="0.0" width="187" height="32"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measure" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82i-Tg-fgq">
+                                                                <rect key="frame" x="187" y="0.0" width="187" height="32"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pht-P1-q1B">
+                                                        <rect key="frame" x="0.0" y="32" width="374" height="27.333333333333329"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jb-j3-Xye">
+                                                                <rect key="frame" x="0.0" y="0.0" width="187" height="27.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measure" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niH-wg-twJ">
+                                                                <rect key="frame" x="187" y="0.0" width="187" height="27.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9y-x4-ze0">
+                                                        <rect key="frame" x="0.0" y="59.333333333333378" width="374" height="27.333333333333336"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTZ-bN-jTb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="187" height="27.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measure" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMJ-Jv-aLj">
+                                                                <rect key="frame" x="187" y="0.0" width="187" height="27.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GU2-60-qq9">
+                                                        <rect key="frame" x="0.0" y="86.666666666666629" width="374" height="27.333333333333329"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neA-2i-hE4">
+                                                                <rect key="frame" x="0.0" y="0.0" width="187" height="27.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measure" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1t1-mc-lJ2">
+                                                                <rect key="frame" x="187" y="0.0" width="187" height="27.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkz-cJ-Yft">
+                                                        <rect key="frame" x="0.0" y="114" width="374" height="27.333333333333343"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foV-Lb-OM1">
+                                                                <rect key="frame" x="0.0" y="0.0" width="187" height="27.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measure" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIC-1g-H4b">
+                                                                <rect key="frame" x="187" y="0.0" width="187" height="27.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVa-er-2im">
+                                                        <rect key="frame" x="0.0" y="141.33333333333337" width="374" height="27.333333333333343"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVf-Sc-Hv5">
+                                                                <rect key="frame" x="0.0" y="0.0" width="187" height="27.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measure" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xnh-r2-TmW">
+                                                                <rect key="frame" x="187" y="0.0" width="187" height="27.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtj-Lj-dS1">
+                                                        <rect key="frame" x="0.0" y="168.66666666666663" width="374" height="27.333333333333343"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mj3-Dq-zqO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="187" height="27.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measure" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKS-SL-jxq">
+                                                                <rect key="frame" x="187" y="0.0" width="187" height="27.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jvk-Hb-2HH">
+                                                        <rect key="frame" x="0.0" y="196" width="374" height="27.333333333333343"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XH0-7v-MVP">
+                                                                <rect key="frame" x="0.0" y="0.0" width="187" height="27.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measure" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uj-Jq-dsC">
+                                                                <rect key="frame" x="187" y="0.0" width="187" height="27.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBc-5m-4NY">
+                                                        <rect key="frame" x="0.0" y="223.33333333333337" width="374" height="27.333333333333343"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbP-7O-iVZ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="187" height="27.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measure" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4G-8p-vOJ">
+                                                                <rect key="frame" x="187" y="0.0" width="187" height="27.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UEQ-cx-cyk" secondAttribute="trailing" id="RAi-bc-kqD"/>
+                                    <constraint firstItem="UEQ-cx-cyk" firstAttribute="top" secondItem="z8E-Wq-pkC" secondAttribute="top" id="l7U-xI-o01"/>
+                                    <constraint firstAttribute="bottom" secondItem="UEQ-cx-cyk" secondAttribute="bottom" id="nPn-Nv-bbo"/>
+                                    <constraint firstItem="UEQ-cx-cyk" firstAttribute="leading" secondItem="z8E-Wq-pkC" secondAttribute="leading" id="uma-BS-BPj"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gcx-lC-Riu" firstAttribute="top" secondItem="IuC-cS-m2X" secondAttribute="top" id="5RC-3R-mJL"/>
+                            <constraint firstItem="jjR-o3-CVq" firstAttribute="height" secondItem="IuC-cS-m2X" secondAttribute="height" multiplier="1/2" id="HMn-tT-cKd"/>
+                            <constraint firstItem="Gcx-lC-Riu" firstAttribute="leading" secondItem="IuC-cS-m2X" secondAttribute="leading" id="LGC-Yg-8PR"/>
+                            <constraint firstItem="z8E-Wq-pkC" firstAttribute="leading" secondItem="fzx-04-S5v" secondAttribute="leading" constant="20" id="LHl-B8-lEL"/>
+                            <constraint firstItem="fzx-04-S5v" firstAttribute="trailing" secondItem="z8E-Wq-pkC" secondAttribute="trailing" constant="20" id="bLy-Bw-0EZ"/>
+                            <constraint firstItem="jjR-o3-CVq" firstAttribute="width" secondItem="IuC-cS-m2X" secondAttribute="width" constant="-40" id="duo-wt-i7j"/>
+                            <constraint firstItem="z8E-Wq-pkC" firstAttribute="top" secondItem="fzx-04-S5v" secondAttribute="top" constant="20" id="iAv-Ck-7Kb"/>
+                            <constraint firstAttribute="trailing" secondItem="Gcx-lC-Riu" secondAttribute="trailing" id="lFN-w1-ThF"/>
+                            <constraint firstItem="fzx-04-S5v" firstAttribute="bottom" secondItem="z8E-Wq-pkC" secondAttribute="bottom" constant="20" id="swV-Qo-PjF"/>
+                            <constraint firstAttribute="bottom" secondItem="Gcx-lC-Riu" secondAttribute="bottom" id="wC6-xC-KPb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fzx-04-S5v"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Z0j-Z9-hMM">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="r0e-eR-mGZ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="ZsD-Gc-MVb" kind="unwind" unwindAction="unwind:" id="hgl-CG-eeq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="alcoholicLabel" destination="3BV-ji-yQw" id="ZaE-EA-VUR"/>
+                        <outlet property="backgroundImage" destination="Gcx-lC-Riu" id="rLM-sg-gug"/>
+                        <outlet property="categoryLabel" destination="hw5-Gm-v6M" id="Meu-vk-caY"/>
+                        <outlet property="glassLabel" destination="cst-O7-lik" id="bNb-sf-8hD"/>
+                        <outlet property="imageView" destination="jjR-o3-CVq" id="VyY-jc-RTv"/>
+                        <outlet property="ingredients1Label" destination="1jb-j3-Xye" id="C1I-rW-zvX"/>
+                        <outlet property="ingredients2Label" destination="CTZ-bN-jTb" id="4hx-Hf-KH4"/>
+                        <outlet property="ingredients3Label" destination="neA-2i-hE4" id="Ble-0r-jDW"/>
+                        <outlet property="ingredients4Label" destination="foV-Lb-OM1" id="LSE-nS-DPF"/>
+                        <outlet property="ingredients5Label" destination="pVf-Sc-Hv5" id="vTk-0E-KdV"/>
+                        <outlet property="ingredients6Label" destination="Mj3-Dq-zqO" id="xrM-eX-2Oy"/>
+                        <outlet property="ingredients7Label" destination="XH0-7v-MVP" id="375-4L-Egf"/>
+                        <outlet property="ingredients8Label" destination="bbP-7O-iVZ" id="a7J-HU-IZc"/>
+                        <outlet property="instructionLabel" destination="7oB-Xp-Qln" id="sfC-mL-ebb"/>
+                        <outlet property="measure1Label" destination="niH-wg-twJ" id="91p-xO-mpe"/>
+                        <outlet property="measure2Label" destination="hMJ-Jv-aLj" id="U41-Uv-2Xl"/>
+                        <outlet property="measure3Label" destination="1t1-mc-lJ2" id="61P-nX-btO"/>
+                        <outlet property="measure4Label" destination="OIC-1g-H4b" id="0FE-Dj-xjf"/>
+                        <outlet property="measure5Label" destination="Xnh-r2-TmW" id="WhX-HK-n3s"/>
+                        <outlet property="measure6Label" destination="SKS-SL-jxq" id="yR6-e8-sHh"/>
+                        <outlet property="measure7Label" destination="0Uj-Jq-dsC" id="fuL-0Y-oV6"/>
+                        <outlet property="measure8Label" destination="w4G-8p-vOJ" id="Ilp-Pm-F2D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J4k-fg-LiW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ZsD-Gc-MVb" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2576.811594202899" y="102.45535714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5bK-9G-YZL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2qf-bD-W0j" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="aoM-eQ-9ED">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="P0R-jZ-CBl" kind="relationship" relationship="rootViewController" id="yOt-ik-CYH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nxh-LY-wbK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900.00000000000011" y="103.79464285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="37.5" height="37.5"/>
+        <image name="party" width="500" height="292.5"/>
+    </resources>
+</document>
