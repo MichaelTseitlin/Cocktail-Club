@@ -15,7 +15,7 @@ struct Coctail: Codable {
 struct Drink: Codable {
     let idDrink : String?
     let strDrink : String?
-    let strDrinkThumb : String?
+    let strDrinkThumb : URL?
     
     let dateModified : String?
     let strAlcoholic : String?

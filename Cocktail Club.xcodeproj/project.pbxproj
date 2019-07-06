@@ -74,7 +74,7 @@
 		844A16F322CDCA0E0038EA51 /* Cocktail Club */ = {
 			isa = PBXGroup;
 			children = (
-				844A170C22CDCAF00038EA51 /* Managers */,
+				844A170C22CDCAF00038EA51 /* Network */,
 				844A170922CDCABA0038EA51 /* Model */,
 				844A170622CDCA7C0038EA51 /* View */,
 				844A170822CDCAA60038EA51 /* Controller */,
@@ -121,13 +121,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		844A170C22CDCAF00038EA51 /* Managers */ = {
+		844A170C22CDCAF00038EA51 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				844A170D22CDCAFC0038EA51 /* NetworkManager.swift */,
 				844A171522CDDA5C0038EA51 /* NetworkDataService.swift */,
 			);
-			path = Managers;
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

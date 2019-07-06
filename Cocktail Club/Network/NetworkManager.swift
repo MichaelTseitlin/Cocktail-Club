@@ -8,8 +8,6 @@
 
 import UIKit
 
-let imageCache = NSCache<AnyObject, AnyObject>()
-
 class NetworkManager {
     
     static let shared = NetworkManager()
@@ -36,33 +34,18 @@ class NetworkManager {
         
     }
     
-    func fetchImage(urlString: String, completion: @escaping (UIImage?) -> Void) {
-        
-        guard let url = URL(string: urlString) else { return }
-        
-        DispatchQueue.main.async {
-            completion(nil)
-        }
-        
-        if let imageFromCache = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
-            DispatchQueue.main.async {
-                completion(imageFromCache)
-            }
-            return
-        }
-        
+    func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) {
+
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             
             if let error = error {
                 print(error.localizedDescription)
             }
             
-            guard let data = data else { return }
+            guard let data = data, let image = UIImage(data: data) else { return }
             
             DispatchQueue.main.async {
-                let imageToCache = UIImage(data: data)
-                imageCache.setObject(imageToCache!, forKey: urlString as AnyObject)
-                completion(imageToCache)
+                completion(image)
             }
             
         }.resume()

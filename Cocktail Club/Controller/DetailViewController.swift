@@ -62,12 +62,11 @@ class DetailViewController: UIViewController {
     
     private func updateUI() {
         
-        guard let urlString = drink?.strDrinkThumb else { return }
+        guard let url = drink?.strDrinkThumb else { return }
         
-        NetworkManager.shared.fetchImage(urlString: urlString) { (image) in
+        NetworkManager.shared.fetchImage(url: url) { (image) in
             self.imageView.image = image
         }
-//        imageView.cacheImage(urlString: urlString)
         
         DispatchQueue.main.async {
             self.categoryLabel.text = "Category: \(self.drink?.strCategory ?? "")"
