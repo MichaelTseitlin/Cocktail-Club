@@ -17,14 +17,12 @@ class CollectionViewCell: UICollectionViewCell {
         
         nameLabel.text = drink?.strDrink
         
-        guard let url = drink?.strDrinkThumb else { return }
+        guard let urlString = drink?.strDrinkThumb else { return }
         
-        NetworkManager.shared.fetchImage(url: url) { (image) in
-            
-            DispatchQueue.main.async {
-                self.imageView.image = image
-            }
+        NetworkManager.shared.fetchImage(urlString: urlString) { (image) in
+            self.imageView.image = image
         }
+//        imageView.cacheImage(urlString: urlString)
     }
     
 }

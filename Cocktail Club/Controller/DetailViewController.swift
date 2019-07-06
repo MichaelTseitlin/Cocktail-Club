@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
     // MARK: - Properties
     
     var idDrink = ""
@@ -42,37 +42,40 @@ class DetailViewController: UIViewController {
     @IBOutlet var measure6Label: UILabel!
     @IBOutlet var measure7Label: UILabel!
     @IBOutlet var measure8Label: UILabel!
-
+    
     // MARK: - UIMethods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         networkDataService.fetchDrink(byId: idDrink) { (coctail) in
             let drink = coctail?.drinks?.first
             self.drink = drink
             self.updateUI()
         }
-       
+        
         backgroundImage.blurImage()
         navigationController?.navigationBar.tintColor = .white
     }
-
+    
     // MARK: - Custom Methods
     
     private func updateUI() {
-    
-        guard let url = drink?.strDrinkThumb else { return }
         
-        NetworkManager.shared.fetchImage(url: url) { (image) in
-                
-                self.categoryLabel.text = "Category: \(self.drink?.strCategory ?? "")"
-                self.alcoholicLabel.text = "Alcoholic: \(self.drink?.strAlcoholic ?? "")"
-                self.glassLabel.text = "Glass: \(self.drink?.strGlass ?? "")"
-                self.instructionLabel.text = "Instruction: \(self.drink?.strInstructions ?? "")"
-                self.createIngredients()
-                self.createMeasure()
-                self.imageView.image = image
+        guard let urlString = drink?.strDrinkThumb else { return }
+        
+        NetworkManager.shared.fetchImage(urlString: urlString) { (image) in
+            self.imageView.image = image
+        }
+//        imageView.cacheImage(urlString: urlString)
+        
+        DispatchQueue.main.async {
+            self.categoryLabel.text = "Category: \(self.drink?.strCategory ?? "")"
+            self.alcoholicLabel.text = "Alcoholic: \(self.drink?.strAlcoholic ?? "")"
+            self.glassLabel.text = "Glass: \(self.drink?.strGlass ?? "")"
+            self.instructionLabel.text = "Instruction: \(self.drink?.strInstructions ?? "")"
+            self.createIngredients()
+            self.createMeasure()
         }
     }
     
